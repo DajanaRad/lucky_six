@@ -44,6 +44,7 @@ $ball-radius: 50%;
 body {
   font-family: Arial, sans-serif;
   margin: 0;
+  box-sizing: border-box;
 }
 #wrapper {
   margin: 0 auto;
@@ -129,12 +130,13 @@ main {
   }
   div {
     display: flex;
-    margin-left: 3rem;
+    margin-left: 2.5rem;
     flex-shrink: 0;
     p {
       color: $text-color;
       font-weight: bold;
       font-size: 1.3rem;
+      margin-left: 0.3rem;
     }
     div {
       @include ball-style;
@@ -153,19 +155,19 @@ main {
   }
   &.two {
     top: 4.7rem;
-    left: 22rem;
+    left: 21.9rem;
   }
   &.three {
-    top: 8rem;
+    top: 8.1rem;
     left: 22rem;
   }
   &.four {
-    top: 11.5rem;
+    top: 11.6rem;
     left: 23.2rem;
   }
   &.five {
     top: 14.4rem;
-    left: 25.5rem;
+    left: 25.4rem;
   }
 }
 

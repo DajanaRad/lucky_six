@@ -11,7 +11,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  margin: 0; }
+  margin: 0;
+  box-sizing: border-box; }
 
 #wrapper {
   margin: 0 auto;
@@ -73,12 +74,13 @@ main {
         font-weight: bold; }
   .main_div div {
     display: flex;
-    margin-left: 3rem;
+    margin-left: 2.5rem;
     flex-shrink: 0; }
     .main_div div p {
       color: #f7f7f7;
       font-weight: bold;
-      font-size: 1.3rem; }
+      font-size: 1.3rem;
+      margin-left: 0.3rem; }
     .main_div div div {
       height: 3.5rem;
       width: 3.5rem;
@@ -139,16 +141,16 @@ main {
     left: 23rem; }
   .fixed.two {
     top: 4.7rem;
-    left: 22rem; }
+    left: 21.9rem; }
   .fixed.three {
-    top: 8rem;
+    top: 8.1rem;
     left: 22rem; }
   .fixed.four {
-    top: 11.5rem;
+    top: 11.6rem;
     left: 23.2rem; }
   .fixed.five {
     top: 14.4rem;
-    left: 25.5rem; }
+    left: 25.4rem; }
 
 #round {
   grid-area: round_no; }
