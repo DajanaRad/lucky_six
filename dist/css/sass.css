@@ -1,6 +1,21 @@
+.body-img {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background: url("../img/b.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+
 body {
   font-family: Arial, sans-serif;
   margin: 0; }
+
+#wrapper {
+  margin: 0 auto;
+  width: 57rem; }
 
 header {
   margin: 0;
@@ -9,7 +24,12 @@ header {
   align-items: center;
   background: repeating-linear-gradient(to left top, #03c4ff, #100b8f);
   height: 5rem;
-  font-family: "Pacifico", cursive; }
+  font-family: "Pacifico", cursive;
+  border-bottom: 0.2rem solid blue;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-image: linear-gradient(to right, #100b8f, #03c4ff) 1 stretch; }
   header .lucky_logo {
     width: 18rem; }
   header .drum_balls {
@@ -25,18 +45,144 @@ header {
       height: 1.3rem;
       width: 1.3rem;
       display: inline-block;
-      border-radius: 10px;
-      background: black; }
+      border-radius: 50%;
+      background: #1a1b21; }
 
 main {
-  background-image: url("../dist/img/background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  position: relative; }
+
+.main_div {
+  padding: 1rem;
   display: grid;
-  grid-template-areas: "round_no first_ball first_ball pick_numbers pick_numbers jacpot_code" "round_no first_ball first_ball pick_numbers pick_numbers jacpot_code" "round_no first_ball first_ball pick_numbers pick_numbers jacpot_code" "round_no first_ball first_ball pick_numbers pick_numbers jacpot_code" "round_no first_ball first_ball pick_numbers pick_numbers jacpot_code"; }
-  main div {
-    display: inline-block;
+  grid-auto-flow: column;
+  grid-template-areas: "round_no first_ball first_ball first_ball first_ball jackpot_code" "ball1 first_ball first_ball first_ball first_ball ball22" "ball2 first_ball first_ball first_ball first_ball ball23" "ball3 first_ball first_ball first_ball first_ball ball24" "ball4 first_ball first_ball first_ball first_ball ball25" "ball5 pick pick pick pick ball26" "ball6 pick pick pick pick ball27" "ball7 ball10 ball13 ball16 ball19 ball28" "ball8 ball11 ball14 ball17 ball20 ball29" "ball9 ball12 ball15 ball18 ball21 ball30"; }
+  .main_div .number_of {
+    align-self: center;
+    justify-self: center;
+    background-image: linear-gradient(to bottom right, #626263 0%, #ededed 20% 30%, #9e9d9d 55% 60%, #bdbbbb 70% 75%, #353536 90% 100%);
+    width: 9rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 0.5rem; }
+    .main_div .number_of p {
+      margin: 0.4rem 0 0 0;
+      font-size: 0.9rem; }
+      .main_div .number_of p#round_no {
+        margin: 0.1rem;
+        font-size: 1.9rem;
+        font-weight: bold; }
+  .main_div div {
+    display: flex;
+    margin-left: 3rem;
+    flex-shrink: 0; }
+    .main_div div p {
+      color: #f7f7f7;
+      font-weight: bold;
+      font-size: 1.3rem; }
+    .main_div div div {
+      height: 3.5rem;
+      width: 3.5rem;
+      position: relative;
+      box-sizing: border-box;
+      margin: 0;
+      color: #fff;
+      background: #000;
+      background-clip: padding-box;
+      /* !important */
+      border: solid 2px transparent;
+      /* !important */
+      border-radius: 50%; }
+      .main_div div div:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        margin: -2px;
+        /* !important */
+        border-radius: inherit;
+        /* !important */
+        background: linear-gradient(to right, #ededed, #353536); }
+
+.fixed {
+  position: absolute !important;
+  height: 3.5rem;
+  width: 3.5rem;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  color: #fff;
+  background: #000;
+  background-clip: padding-box;
+  /* !important */
+  border: solid 2px transparent;
+  /* !important */
+  border-radius: 50%;
+  top: 0; }
+  .fixed:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -2px;
+    /* !important */
+    border-radius: inherit;
+    /* !important */
+    background: linear-gradient(to right, #ededed, #353536); }
+  .fixed.one {
+    top: 1.5rem;
+    left: 23rem; }
+  .fixed.two {
+    top: 4.7rem;
+    left: 22rem; }
+  .fixed.three {
+    top: 8rem;
+    left: 22rem; }
+  .fixed.four {
+    top: 11.5rem;
+    left: 23.2rem; }
+  .fixed.five {
+    top: 14.4rem;
+    left: 25.5rem; }
+
+#round {
+  grid-area: round_no; }
+
+#jackpot {
+  grid-area: jackpot_code; }
+
+.drum {
+  grid-area: first_ball;
+  justify-self: center; }
+
+.choose_number {
+  grid-area: pick;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 7rem; }
+  .choose_number input {
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-radius: 50%;
+    text-align: center;
+    width: 3rem;
+    height: 3rem;
+    margin: 0.3rem; }
+  .choose_number button {
+    display: block;
+    border-radius: 10px;
+    background: repeating-linear-gradient(to left top, #03c4ff, #100b8f);
+    border: none;
+    color: #f7f7f7;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
     height: 2rem;
-    width: 2rem;
-    border-radius: 15px;
-    background-color: #1a1b21; }
+    margin-left: 1rem; }
