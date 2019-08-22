@@ -1,6 +1,13 @@
 $text-color: #f7f7f7;
 $ball-background: #1a1b21;
 $ball-radius: 50%;
+@mixin p-for-balls {
+  color: $text-color;
+  font-weight: bold;
+  font-size: 1.3rem;
+  // margin-left: 0.3rem;
+  text-align: center;
+}
 @mixin grid-aligment {
   align-self: center;
   justify-self: center;
@@ -58,7 +65,7 @@ header {
   background: repeating-linear-gradient(to left top, #03c4ff, #100b8f);
   height: 5rem;
   font-family: "Pacifico", cursive;
-  border-bottom: 0.2rem solid blue;
+  border-bottom: 4px solid blue;
   border-top-width: 0;
   border-left-width: 0;
   border-right-width: 0;
@@ -116,8 +123,9 @@ main {
     );
     width: 9rem;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 13px;
     margin-bottom: 0.5rem;
+    border: 3px solid #9e9d9d;
     p {
       margin: 0.4rem 0 0 0;
       font-size: 0.9rem;
@@ -133,41 +141,48 @@ main {
     margin-left: 2.5rem;
     flex-shrink: 0;
     p {
-      color: $text-color;
-      font-weight: bold;
-      font-size: 1.3rem;
-      margin-left: 0.3rem;
+      @include p-for-balls;
+      width: 100%;
     }
     div {
       @include ball-style;
+      p {
+        font-size: 2rem;
+        margin: 0.5rem 0.5rem 0 0.5rem;
+      }
     }
   }
 }
 
 //ALIGMENT OF THE FRIST FIVE BALLS
+
 .fixed {
   position: absolute !important;
   @include ball-style;
-  top: 0;
+  p {
+    @include p-for-balls;
+    font-size: 2rem;
+    margin: 0.5rem 0 0 0 !important;
+  }
   &.one {
     top: 1.5rem;
-    left: 23rem;
+    left: 22.8rem;
   }
   &.two {
     top: 4.7rem;
-    left: 21.9rem;
+    left: 21.7rem;
   }
   &.three {
     top: 8.1rem;
-    left: 22rem;
+    left: 21.8rem;
   }
   &.four {
     top: 11.6rem;
-    left: 23.2rem;
+    left: 23rem;
   }
   &.five {
     top: 14.4rem;
-    left: 25.4rem;
+    left: 25.2rem;
   }
 }
 
@@ -182,6 +197,7 @@ main {
 .drum {
   grid-area: first_ball;
   justify-self: center;
+  margin-left: 0.3rem;
 }
 
 .choose_number {
@@ -190,7 +206,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 7rem;
+  margin-left: 6rem;
   input {
     font-size: 1.4rem;
     font-weight: 700;
@@ -199,17 +215,19 @@ main {
     width: 3rem;
     height: 3rem;
     margin: 0.3rem;
-  }
-  button {
-    display: block;
-    border-radius: 10px;
-    background: repeating-linear-gradient(to left top, #03c4ff, #100b8f);
-    border: none;
-    color: $text-color;
-    padding: 0.5rem;
-    text-align: center;
-    text-decoration: none;
-    height: 2rem;
-    margin-left: 1rem;
+    &.button {
+      font-weight: 300;
+      display: block;
+      border-radius: 10px;
+      background: repeating-linear-gradient(to left top, #03c4ff, #100b8f);
+      color: $text-color;
+      height: 2rem;
+      width: 5rem;
+      margin-left: 1rem;
+      border: 2px solid #2f78ed;
+      font-size: 1.3rem;
+    }
   }
 }
+
+//CLASS FOR BALLS THAT ARE PICKED FROM DRUN
