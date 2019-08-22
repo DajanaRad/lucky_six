@@ -80,8 +80,8 @@ function hasDuplicates(arr) {
 //DISPLAY BALL ON THE SCREEN
 
 const popBalls = () => {
-  displayedNumbers();
   var inputValues = [];
+  displayedNumbers();
   var inputs = document.querySelectorAll("input[name=num]");
   inputs.forEach(element => {
     inputValues.push(element.value);
@@ -138,6 +138,9 @@ const popBalls = () => {
   } else {
     alert("you have to choose 6 diferent numbers between 1 and 48");
   }
+  return inputValues.map(function(numero) {
+    return allNumbers.filter(element => element === numero);
+  });
 };
 start.addEventListener("click", popBalls);
 allNumbers = [];
@@ -165,3 +168,4 @@ allNumbers = [];
 //   console.log(index1);
 //   setTimeout(writeHtml(element, balls, index1), 2000 * (index + 5));
 // });
+// inputValues;
