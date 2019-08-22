@@ -114,9 +114,10 @@ const popBalls = () => {
             }, #000)`;
       }, 2000 * index);
     });
+    //for all the other balls
     balls.forEach((element, index) => {
       setTimeout(function() {
-        ballsP[index].innerText = allNumbers[index];
+        ballsP[index].innerText = allNumbers[index + 5];
         element.style.background = `radial-gradient(circle at 10px 10px, ${
           colors[randomNum(8)]
         }, #000)`
@@ -134,24 +135,18 @@ const popBalls = () => {
             }, #000)`;
       }, 2000 * (index + 5));
     });
-
-    //for all the other balls
-    // balls.forEach(function(element, index) {
-    //   const index1 = index;
-    //   console.log(index1);
-    //   setTimeout(writeHtml(element, balls, index1), 2000 * (index + 5));
-    // });
-    // const guesedNumbers = inputValues.filter(element =>
-    //   allNumbers.includes(element)
-    // );
-    // console.log(guesedNumbers);
   } else {
     alert("you have to choose 6 diferent numbers between 1 and 48");
   }
 };
 start.addEventListener("click", popBalls);
 allNumbers = [];
+
 //CHECKING HOW MUCH NUMBERS YOU GUESSED
+// const guesedNumbers = inputValues.filter(element =>
+//   allNumbers.includes(element)
+// );
+// console.log(guesedNumbers);
 
 // function writeHtml(p, ball, index3) {
 //   p[index3].innerText = allNumbers[index3 + 5];
@@ -163,3 +158,10 @@ allNumbers = [];
 //     : `radial-gradient(circle at 10px 10px, ${colors[randomNum(8)]}, #000)` ||
 //       `radial-gradient(circle at 10px 10px, ${colors[randomNum(8)]}, #000)`;
 // }
+
+//for all the other balls
+// balls.forEach(function(element, index) {
+//   const index1 = index;
+//   console.log(index1);
+//   setTimeout(writeHtml(element, balls, index1), 2000 * (index + 5));
+// });
