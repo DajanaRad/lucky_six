@@ -90,7 +90,7 @@ const popBalls = () => {
   // have to be 6 diferent numbers between 1 and 48 to execute function further
   if (
     !hasDuplicates(inputValues) &&
-    !inputValues.some(element => element === 0 || element === "") &&
+    !inputValues.some(element => element === "0" || element === "") &&
     !inputValues.some(num => num > 48)
   ) {
     //for first five balls
