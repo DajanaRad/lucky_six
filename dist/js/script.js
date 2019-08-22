@@ -52,7 +52,7 @@ function animationBalls() {
           colors[index]
         }, #000)`)
     );
-  }, 20000);
+  }, 30000);
 }
 animationBalls();
 
